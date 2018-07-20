@@ -12,7 +12,7 @@ call vundle#begin()
 " sudo vim +PluginClean +qall
 " sudo :PluginInstall
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree' " Ctrl-w w, Ctrl-w h/j/k/l
 Plugin 'morhetz/gruvbox'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'airblade/vim-gitgutter'
