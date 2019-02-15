@@ -13,7 +13,7 @@ call vundle#begin()
 " sudo :PluginInstall
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree' " Ctrl-w w, Ctrl-w h/j/k/l
-Plugin 'morhetz/gruvbox'
+Plugin 'morhetz/gruvbox'     " Color code
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'airblade/vim-gitgutter'
 " Plugin 'wincent/Command-T'
@@ -21,7 +21,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 " For grep maybe need run command :source %
 Plugin 'vim-scripts/grep.vim'
-Plugin 'vim-scripts/EasyGrep'
+" Plugin 'vim-scripts/EasyGrep'
 Plugin 'mru.vim'
 
 " All of your Plugins must be added before the following line
@@ -46,6 +46,9 @@ set laststatus=2
 
 set incsearch           " Highlight matches as you type.
 set hlsearch            " Highlight matches.
+
+" [CTRL-P]
+let g:ctrlp_max_files = 10000
 
 " MRU
 map <C-m> :MRU<CR>
