@@ -67,11 +67,11 @@ let Grep_Skip_Dirs = '.git tmp system coverage log solr public _site node_module
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
-nnoremap <C-e>     :q!<CR>
+nnoremap <C-q>     :q!<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
-inoremap <C-e>     <Esc>:q!<CR>i
+inoremap <C-q>     <Esc>:q!<CR>i
 
 autocmd BufWritePre * :%s/\s\+$//e " стирати зайві пробіли після збереження файла
 " autocmd BufWritePre *.* :%s/\s\+$//e " записувати все в спільний буфер
