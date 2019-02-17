@@ -38,6 +38,7 @@ set autoread
 set relativenumber                " Set relative line numbers
 set laststatus=2
 
+let NERDTreeShowHidden=1
 
 autocmd BufWritePre * :%s/\s\+$//e " стирати пробіли після збереження файла
 
@@ -46,4 +47,3 @@ set incsearch " Highlight matches as you type.
 set hlsearch " Highlight matches.
 
 map <C-n> :NERDTreeToggle<CR>
-
