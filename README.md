@@ -2,16 +2,32 @@
 
 ## Quick Start
 
-1. Set up Vundle:
+1. Clone .vim:
 
-    `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+```
+  git clone https://github.com/galulex/vim.git ~/.vim
+```
 
-2. Create .vimrc
+2. Clone Vundle:
 
-    `vim .vimrc`
+```
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
 
-    clone .vimrc from github .vimrc https://github.com/JARVIS-VOVA/Vim
+3. .vimrc
 
-3. Install plugins
+```
+  ln -s  ~/.vim/.vimrc ~/.vimrc
+```
 
-    `:PluginList`
+4. Open vim and run next command:
+
+```
+  :PlugInstall
+```
+
+5. Lists configured plugins
+
+```
+  :PluginList`
+```
