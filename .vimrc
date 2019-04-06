@@ -38,6 +38,16 @@ set autoread
 set relativenumber                " Set relative line numbers
 set laststatus=2
 
+" Tabs
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+nnoremap <C-e>     :q!<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+inoremap <C-e>     <Esc>:q!<CR>i
+
 let NERDTreeShowHidden=1
 
 autocmd BufWritePre * :%s/\s\+$//e " стирати пробіли після збереження файла
