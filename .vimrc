@@ -22,6 +22,7 @@ Plugin 'kien/ctrlp.vim'
 " For grep maybe need run command :source %
 Plugin 'vim-scripts/grep.vim'
 Plugin 'vim-scripts/EasyGrep'
+Plugin 'mru.vim'
 
 " All of your Plugins must be added before the following line
 
@@ -65,6 +66,9 @@ map <C-f> :Rgrep<cr>
 let Grep_Default_Filelist = '*.*'
 let Grep_Skip_Files = '*.log *.sql *.png *.jpg *.jpeg *.gif'
 let Grep_Skip_Dirs = '.git tmp system coverage log solr public _site node_modules'
+
+" MRU
+map <C-m> :MRU<CR>
 
 autocmd BufWritePre * :%s/\s\+$//e " стирати зайві пробіли після збереження файла
 " autocmd BufWritePre *.* :%s/\s\+$//e " записувати все в спільний буфер
