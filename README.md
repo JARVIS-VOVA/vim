@@ -31,3 +31,13 @@
 ```
   :PluginList`
 ```
+
+## Create macros
+```
+  q # start recording
+  l # press any key
+  console.log('') # write your command
+  q # end recording
+
+  @l # use macros
+```
