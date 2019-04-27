@@ -5,7 +5,7 @@ filetype off " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 " vim +PluginInstall +qall
@@ -34,22 +34,31 @@ colorscheme gruvbox
 
 set background=dark
 set number
-set list " показувати всі символи
+set list                " показувати всі символи
 set expandtab ts=2
 set shiftwidth=2
 set autoindent
-set showtabline=2   " Always shows tabs on top
-set listchars=trail:•             " Show spaces in end of line
+set showtabline=2       " Always shows tabs on top
+set listchars=trail:•   " Show spaces in end of line
 set autoread
-set relativenumber                " Set relative line numbers
+set relativenumber      " Set relative line numbers
 set laststatus=2
 
-set incsearch " Highlight matches as you type.
-set hlsearch " Highlight matches.
+set incsearch           " Highlight matches as you type.
+set hlsearch            " Highlight matches.
+
+" MRU
+map <C-m> :MRU<CR>
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+
+" Rgrep
+map <C-f> :Rgrep<cr>
+let Grep_Default_Filelist = '*.*'
+let Grep_Skip_Files = '*.log *.sql *.png *.jpg *.jpeg *.gif'
+let Grep_Skip_Dirs = '.git tmp system coverage log solr public _site node_modules'
 
 " Tabs
 nnoremap <C-S-tab> :tabprevious<CR>
@@ -60,15 +69,6 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-e>     <Esc>:q!<CR>i
-
-" Rgrep
-map <C-f> :Rgrep<cr>
-let Grep_Default_Filelist = '*.*'
-let Grep_Skip_Files = '*.log *.sql *.png *.jpg *.jpeg *.gif'
-let Grep_Skip_Dirs = '.git tmp system coverage log solr public _site node_modules'
-
-" MRU
-map <C-m> :MRU<CR>
 
 autocmd BufWritePre * :%s/\s\+$//e " стирати зайві пробіли після збереження файла
 " autocmd BufWritePre *.* :%s/\s\+$//e " записувати все в спільний буфер
