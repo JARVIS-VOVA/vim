@@ -22,7 +22,7 @@ Plugin 'kien/ctrlp.vim'
 " For grep maybe need run command :source %
 Plugin 'vim-scripts/grep.vim'
 " Plugin 'vim-scripts/EasyGrep'
-Plugin 'mru.vim'
+Plugin 'corntrace/bufexplorer'
 
 " All of your Plugins must be added before the following line
 
@@ -50,8 +50,8 @@ set hlsearch            " Highlight matches.
 " [CTRL-P]
 let g:ctrlp_max_files = 10000
 
-" MRU
-map <C-m> :MRU<CR>
+" [CTRL-M] BufExplorer
+nnoremap <silent> <C-m> :BufExplorer<CR>
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
