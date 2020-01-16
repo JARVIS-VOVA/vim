@@ -47,8 +47,15 @@ set laststatus=2
 set incsearch           " Highlight matches as you type.
 set hlsearch            " Highlight matches.
 
-" [CTRL-P]
-let g:ctrlp_max_files = 10000
+" set smarttab
+" set et                  " включим автозамену по умолчанию
+" set wrap                " попросим Vim переносить длинные строки
+" set ai                  " включим автоотступы для новых строк
+
+" CtrlP
+" let g:ctrlp_max_files = 10000
+let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|tmp|coverage|log|node_modules)$'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 
 " [CTRL-M] BufExplorer
 nnoremap <silent> <C-m> :BufExplorer<CR>
