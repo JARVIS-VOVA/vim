@@ -5,7 +5,7 @@
 1. Clone .vim:
 
 ```
-  git clone https://github.com/galulex/vim.git ~/.vim
+  git clone https://github.com/JARVIS-VOVA/Vim.git ~/.vim
 ```
 
 2. Clone Vundle:
