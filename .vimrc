@@ -23,6 +23,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/grep.vim'
 " Plugin 'vim-scripts/EasyGrep'
 Plugin 'corntrace/bufexplorer'
+Plugin 'AutoComplPop'
 
 " All of your Plugins must be added before the following line
 
@@ -44,17 +45,34 @@ set autoread
 set relativenumber      " Set relative line numbers
 set laststatus=2
 
-set incsearch           " Highlight matches as you type.
-set hlsearch            " Highlight matches.
+
+" Поиск в процессе набора
+set incsearch
+" Подсвечивание результатов поиска
+set hlsearch
+set ignorecase
+
+" Указание размеров окна редактора по умолчанию
+set lines=55
+set columns=235
+
+" Подсвечивать линию текста, на которой находится курсор
+set cursorline
 
 " set smarttab
 " set et                  " включим автозамену по умолчанию
 " set wrap                " попросим Vim переносить длинные строки
 " set ai                  " включим автоотступы для новых строк
 
+
+" remove menu bar
+set guioptions-=m
+" set guioptions-=r  "remove right-hand scroll bar
+" set guioptions-=L  "remove left-hand scroll bar
+
 " CtrlP
 " let g:ctrlp_max_files = 10000
-let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|tmp|coverage|log|node_modules)$'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|tmp|coverage|log|tmp|node_modules)$'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 
 " [CTRL-M] BufExplorer
@@ -62,6 +80,7 @@ nnoremap <silent> <C-m> :BufExplorer<CR>
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
+map <F3> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 
 " Rgrep
