@@ -11,19 +11,22 @@ call vundle#begin()
 " vim +PluginInstall +qall
 " sudo vim +PluginClean +qall
 " sudo :PluginInstall
+
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree' " Ctrl-w w, Ctrl-w h/j/k/l
-Plugin 'morhetz/gruvbox'     " Color code
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'airblade/vim-gitgutter'
-" Plugin 'wincent/Command-T'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'      " Ctrl-w w, Ctrl-w h/j/k/l
 Plugin 'kien/ctrlp.vim'
-" For grep maybe need run command :source %
-Plugin 'vim-scripts/grep.vim'
-" Plugin 'vim-scripts/EasyGrep'
 Plugin 'corntrace/bufexplorer'
 Plugin 'AutoComplPop'
+Plugin 'morhetz/gruvbox'          " Color code
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-scripts/grep.vim'     " Search text by project
+Plugin 'tpope/vim-fugitive'
+" Plugin 'jiangmiao/auto-pairs'
+" Plugin 'wincent/Command-T'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'vim-scripts/EasyGrep'
+
+" After change file need run command :source %
 
 " All of your Plugins must be added before the following line
 
@@ -33,45 +36,51 @@ filetype plugin indent on " required
 syntax on
 colorscheme gruvbox
 
+set clipboard=unnamedplus " Використовувати "+ буфур обмена
+
 set background=dark
+set cursorline            " Подсвечивать линию текста, на которой находится курсор
+set showtabline=2         " Always shows tabs on topset autoread
+set smartindent           " Умний перенос строки
+
 set number
-set list                " показувати всі символи
-set expandtab ts=2
-set shiftwidth=2
-set autoindent
-set showtabline=2       " Always shows tabs on top
-set listchars=trail:•   " Show spaces in end of line
-set autoread
-set relativenumber      " Set relative line numbers
-set laststatus=2
+set relativenumber        " Set relative line numbers
 
+set expandtab ts=2        " Change tab on spaces
+set shiftwidth=2          " >> default space
 
-" Поиск в процессе набора
-set incsearch
-" Подсвечивание результатов поиска
-set hlsearch
+set lines=55              " Указание висоти окна редактора по умолчанию
+set columns=235           " Указание ширини окна редактора по умолчанию
+
+set list                  " показувати всі символи
+set listchars=trail:~     " Show symbol spaces
+set listchars=eol:⌘       " ↵ ⏎
+
+set incsearch             " Поиск в процессе набора
+set hlsearch              " Подсвечивание результатов поиска
 set ignorecase
 
-" Указание размеров окна редактора по умолчанию
-set lines=55
-set columns=235
+set guioptions-=m         " remove menu bar
+set guioptions-=T         " remove toolbar
+set guioptions-=r         " remove right-hand scroll bar
+set guioptions-=L         " remove left-hand scroll bar
 
-" Подсвечивать линию текста, на которой находится курсор
-set cursorline
-
-" set smarttab
-" set et                  " включим автозамену по умолчанию
-" set wrap                " попросим Vim переносить длинные строки
-" set ai                  " включим автоотступы для новых строк
-
-
-" remove menu bar
-set guioptions-=m
-" set guioptions-=r  "remove right-hand scroll bar
-" set guioptions-=L  "remove left-hand scroll bar
+" Status Line
+set laststatus=2          " show statusline everytime
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=\ \ %{FugitiveStatusline()}\ \  " statusline setup
+" set statusline+=%#StatusLineTermNC#           " background green
+set statusline+=\ \ %f%m                        " tail of the filename
+set statusline+=%=                              " left/right separator
+" set statusline+=%#CursorColumn#               " background black
+set statusline+=\ \ %c\ \                       " cursor column
+" set statusline+=%#DiffChange#                 " background green
+set statusline+=\ \ %l/%L\ \                    " cursor line/total lines
+" set statusline+=%#GitGutterDeleteLine#        " background red
+set statusline+=\ \ %P\ \                       " percent through file
 
 " CtrlP
-" let g:ctrlp_max_files = 10000
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|tmp|coverage|log|tmp|node_modules)$'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 
@@ -99,5 +108,4 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-q>     <Esc>:q!<CR>i
 
-autocmd BufWritePre * :%s/\s\+$//e " стирати зайві пробіли після збереження файла
-" autocmd BufWritePre *.* :%s/\s\+$//e " записувати все в спільний буфер
+autocmd BufWritePre * :%s/\s\+$//e        " стирати зайві пробіли після збереження файла
