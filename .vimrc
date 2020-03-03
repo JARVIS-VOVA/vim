@@ -21,7 +21,7 @@ Plugin 'morhetz/gruvbox'          " Color code
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/grep.vim'     " Search text by project
 Plugin 'tpope/vim-fugitive'
-" Plugin 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
 " Plugin 'wincent/Command-T'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'vim-scripts/EasyGrep'
