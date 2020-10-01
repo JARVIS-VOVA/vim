@@ -65,6 +65,8 @@ set guioptions-=T         " remove toolbar
 set guioptions-=r         " remove right-hand scroll bar
 set guioptions-=L         " remove left-hand scroll bar
 
+set autoread              " Auto-reloading a file in VIM as soon as it changes on disk
+
 " Status Line
 set laststatus=2          " show statusline everytime
 set statusline=
