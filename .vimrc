@@ -93,6 +93,9 @@ nnoremap <silent> <C-m> :BufExplorer<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <F3> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
+" open a NERDTree automatically when vim starts up
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Rgrep
 map <C-f> :Rgrep<cr>
