@@ -34,10 +34,14 @@
 
 ## Create macros
 ```
-  q # start recording
-  l # press any key
-  console.log('') # write your command
-  q # end recording
-
+  q  # start recording
+  l  # press any key
+  write macros
+  q  # end recording
   @l # use macros
+
+
+  # List macros
+  @l - console.log('')
+  @p - 3.times { p 1 }
 ```
