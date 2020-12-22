@@ -46,6 +46,11 @@ set smartindent           " Умний перенос строки
 set number
 set relativenumber        " Set relative line numbers
 
+set colorcolumn=120       " Setup a line length marker
+highlight ColorColumn ctermbg=black guibg=#2c2d27
+" darkgrey, black
+" :highlight ColorColumn guibg=#2c2d27
+
 set expandtab ts=2        " Change tab on spaces
 set shiftwidth=2          " >> default space
 
