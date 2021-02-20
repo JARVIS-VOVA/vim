@@ -44,4 +44,12 @@
   # List macros
   @l - console.log('')
   @p - 3.times { p 1 }
+  @b - binding.pry
+```
+
+## Configure global gitignore
+```
+  git config --get core.excludesfile # check place file
+  echo '*.swp' >> ~/.gitignore_global
+  git config --global core.excludesfile '~/.gitignore'
 ```
