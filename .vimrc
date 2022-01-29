@@ -36,7 +36,8 @@ filetype plugin indent on " required
 syntax on
 colorscheme gruvbox
 
-set clipboard=unnamedplus " Використовувати "+ буфур обмена
+" set clipboard=unnamedplus " Використовувати + буфур обмена linux
+set clipboard=unnamed " Використовувати буфер обміну з MacOs
 
 set background=dark
 set cursorline            " Подсвечивать линию текста, на которой находится курсор
